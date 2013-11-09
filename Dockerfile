@@ -28,7 +28,20 @@ from	ubuntu:12.04
 maintainer	Solomon Hykes <solomon@dotcloud.com>
 
 # Build dependencies
-run	echo 'deb http://archive.ubuntu.com/ubuntu precise main universe' > /etc/apt/sources.list
+
+
+run	echo 'deb http://mirrors.163.com/ubuntu/ precise main universe restricted multiverse' > /etc/apt/sources.list
+run	echo 'deb-src http://mirrors.163.com/ubuntu/ precise main universe restricted multiverse' >> /etc/apt/sources.list
+run	echo 'deb http://mirrors.163.com/ubuntu/ precise-security universe main multiverse restricted' >> /etc/apt/sources.list
+run	echo 'deb-src http://mirrors.163.com/ubuntu/ precise-security universe main multiverse restricted' >> /etc/apt/sources.list
+run	echo 'deb http://mirrors.163.com/ubuntu/ precise-updates universe main multiverse restricted' >> /etc/apt/sources.list
+run	echo 'deb http://mirrors.163.com/ubuntu/ precise-proposed universe main multiverse restricted' >> /etc/apt/sources.list
+run	echo 'deb-src http://mirrors.163.com/ubuntu/ precise-proposed universe main multiverse restricted' >> /etc/apt/sources.list
+run	echo 'deb http://mirrors.163.com/ubuntu/ precise-backports universe main multiverse restricted' >> /etc/apt/sources.list
+run	echo 'deb-src http://mirrors.163.com/ubuntu/ precise-backports universe main multiverse restricted' >> /etc/apt/sources.list
+run	echo 'deb-src http://mirrors.163.com/ubuntu/ precise-updates universe main multiverse restricted' >> /etc/apt/sources.list
+
+
 run	apt-get update
 run	apt-get install -y -q curl
 run	apt-get install -y -q git
